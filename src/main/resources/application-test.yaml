@@ -1,0 +1,28 @@
+#定义端口号
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 30m #30分钟，测试的话时间不能太短，否则不准。m(分钟)，s(秒)，h(小时)，不写单位默认毫秒
+# 定义服务名称
+spring:
+  application:
+    name: userDemo
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/hogwarts?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.mumu.demo.entity
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+logging:
+  level:
+    com.hogwartsmini.demo.dao: debug #打印sql
+# 定义变量参数
+hello:
+  key1: hello-test
